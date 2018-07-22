@@ -7,23 +7,27 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour {
 	
 	public GameObject cam;
-	public int PlayerScore , HighScore ;
+	public int PlayerScore , PlayerHighScore ;
 	public Text ScoreText;
+    public string state;
 
 	void Start () {
-		PlayerPrefs.GetInt
-
+        //PlayerPrefs.GetInt
+        state = "playing";
 	}
 	
 
 	void Update () {
 		
 		Score ();
-		if(PlayerScore > HighScore)
+        if (state == "lose") print("you lose");
+
+
+		/*if(PlayerScore > PlayerHighScore)
 		{
-		 HighScore = PlayerScore ;
-		 PlayerPrefs.SetInt("High",HighScore);	
-		}
+         PlayerHighScore = PlayerScore ;
+		 PlayerPrefs.SetInt("High", PlayerHighScore);	
+		}*/
 	}
 
 	void Score () {
@@ -32,11 +36,11 @@ public class HUD : MonoBehaviour {
 		ScoreText.text = "Score :" + PlayerScore.ToString ();
 	}
 	
-	void HighScore () {
+	/*void HighScore () {
 		
 		PlayerScore = Mathf.RoundToInt(cam.transform.position.y/2f);
 		ScoreText.text = "Score :" + PlayerScore.ToString ();
-	}
+	}*/
 	
 	
 }
