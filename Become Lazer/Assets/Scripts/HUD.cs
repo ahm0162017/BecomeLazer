@@ -5,23 +5,38 @@ using UnityEngine.UI;
 
 
 public class HUD : MonoBehaviour {
+	
 	public GameObject cam;
-	public int PlayerScore ;
+	public int PlayerScore , HighScore ;
 	public Text ScoreText;
-	// Use this for initialization
+
 	void Start () {
-		
+		PlayerPrefs.GetInt
+
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
+		
 		Score ();
+		if(PlayerScore > HighScore)
+		{
+		 HighScore = PlayerScore ;
+		 PlayerPrefs.SetInt("High",HighScore);	
+		}
 	}
 
 	void Score () {
+		
 		PlayerScore = Mathf.RoundToInt(cam.transform.position.y/2f);
 		ScoreText.text = "Score :" + PlayerScore.ToString ();
-
-		//PlayerScore = cam.transform.position.y;
 	}
+	
+	void HighScore () {
+		
+		PlayerScore = Mathf.RoundToInt(cam.transform.position.y/2f);
+		ScoreText.text = "Score :" + PlayerScore.ToString ();
+	}
+	
+	
 }
