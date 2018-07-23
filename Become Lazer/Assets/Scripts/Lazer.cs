@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lazer : MonoBehaviour {
-    //public GameObject dt; // small part of the tail
+
     public GameObject cam;
     public GameObject HUD;
     public float speed ;
@@ -14,11 +14,11 @@ public class Lazer : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+
         transform.Translate(new Vector2(speed * Time.deltaTime, 0));// move the lazer in x-axis 
-        //Instantiate(dt, transform.position, transform.rotation); // for the tail 
         ChangeShooterPosition();//destroy the lazer & change the shooter position 
 
     }
@@ -46,10 +46,9 @@ public class Lazer : MonoBehaviour {
     {
         if (Obstacle.gameObject.tag == "Obstacle")
         {
-            //print("you lose");
+
             var myHUD = HUD.GetComponent("HUD") as HUD;
             myHUD.state = "lose";
-            Time.timeScale = 0f;
 
         }
     }

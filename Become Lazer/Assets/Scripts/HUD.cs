@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour {
 	
 	public GameObject cam;
-	public int PlayerScore , PlayerHighScore ;
-	public Text ScoreText;
+	int PlayerScore , PlayerHighScore ;
+	public Text ScoreText,LoseScore,LoseHighScore;
     public string state;
-
+    public Canvas LoseCanvas;
 	void Start () {
-        //PlayerPrefs.GetInt
+        //PlayerHighScore = PlayerPrefs.GetInt("High");
         state = "playing";
 	}
 	
@@ -20,14 +20,14 @@ public class HUD : MonoBehaviour {
 	void Update () {
 		
 		Score ();
-        if (state == "lose") print("you lose");
+        if (state == "lose") Lose();
 
 
-		/*if(PlayerScore > PlayerHighScore)
+		if(PlayerScore > PlayerHighScore)
 		{
          PlayerHighScore = PlayerScore ;
-		 PlayerPrefs.SetInt("High", PlayerHighScore);	
-		}*/
+		// PlayerPrefs.SetInt("High", PlayerHighScore);	
+		}
 	}
 
 	void Score () {
@@ -35,12 +35,19 @@ public class HUD : MonoBehaviour {
 		PlayerScore = Mathf.RoundToInt(cam.transform.position.y/2f);
 		ScoreText.text = "Score :" + PlayerScore.ToString ();
 	}
-	
-	/*void HighScore () {
-		
-		PlayerScore = Mathf.RoundToInt(cam.transform.position.y/2f);
-		ScoreText.text = "Score :" + PlayerScore.ToString ();
+
+    /*void HighScore () {
+
+
 	}*/
-	
-	
+
+    void Lose() {
+        Time.timeScale = 0;
+        LoseScore.text = ScoreText.text;
+        //LoseHighScore.text = PlayerHighScore.ToString() ;
+        LoseCanvas.gameObject.SetActive(true);
+        state = "playing";
+    }
+
+
 }
