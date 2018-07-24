@@ -29,14 +29,17 @@ public class LeftShooter : MonoBehaviour {
 
     }
 
-    public void fire() {
-
-
+    public void fireL() {
         if (gameObject.transform.position.x < 0)  Instantiate(lazerL, transform.position, transform.rotation);
-        if (gameObject.transform.position.x > 0)  Instantiate(lazerR, transform.position, transform.rotation);
-
-
+        //if (gameObject.transform.position.x > 0)  Instantiate(lazerR, transform.position, transform.rotation);
     }
+    public void fireR()
+    {
+        //if (gameObject.transform.position.x < 0) Instantiate(lazerL, transform.position, transform.rotation);
+        if (gameObject.transform.position.x > 0) Instantiate(lazerR, transform.position, transform.rotation);
+    }
+
+
 
     public void ChangeAngleL() {
         x = CrossPlatformInputManager.GetAxis("lH");
