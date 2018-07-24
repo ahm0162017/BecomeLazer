@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Lazer : MonoBehaviour {
 
-    public GameObject cam;
-    public GameObject HUD;
+    public GameObject cam, HUD;
     public float speed ;
+    //public bool SuperLazer;
 
     void Start () {
         cam = GameObject.Find("MainCamera"); // cam = MainCamera Object
@@ -46,9 +46,12 @@ public class Lazer : MonoBehaviour {
     {
         if (Obstacle.gameObject.tag == "Obstacle")
         {
-
-            var myHUD = HUD.GetComponent("HUD") as HUD;
-            myHUD.state = "lose";
+            var super = HUD.GetComponent("Abilities") as Abilities;
+            if (!super.SuperLazer)
+            {
+                var myHUD = HUD.GetComponent("HUD") as HUD;
+                myHUD.state = "lose";
+            }
 
         }
     }

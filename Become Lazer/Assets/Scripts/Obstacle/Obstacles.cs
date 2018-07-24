@@ -23,8 +23,8 @@ public class Obstacles : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		//Debug.Log ("Collided with particles");
 
-		Player.GetComponent<TrailRendererTest> ().lifeTime = 0f;
-		StartCoroutine (DestroyPlayer ());
+		//Player.GetComponent<TrailRendererTest> ().lifeTime = 0f;
+		//StartCoroutine (DestroyPlayer ());
 	}
 
 	IEnumerator DestroyPlayer(){

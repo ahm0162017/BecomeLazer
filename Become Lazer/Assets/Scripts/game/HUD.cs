@@ -42,7 +42,7 @@ public class HUD : MonoBehaviour {
 	}*/
 
     void Lose() {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         LoseScore.text = ScoreText.text;
         //LoseHighScore.text = PlayerHighScore.ToString() ;
         LoseCanvas.gameObject.SetActive(true);
