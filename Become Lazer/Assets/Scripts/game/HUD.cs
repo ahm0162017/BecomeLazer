@@ -8,33 +8,39 @@ public class HUD : MonoBehaviour {
 	
 	public GameObject cam;
 	int PlayerScore , PlayerHighScore ;
-	public Text ScoreText,LoseScore,LoseHighScore;
+	public Text ScoreText,HighScoreText,LoseScore,LoseHighScore;
     public string state;
     public Canvas LoseCanvas;
 	void Start () {
-        //PlayerHighScore = PlayerPrefs.GetInt("High");
+        PlayerHighScore = PlayerPrefs.GetInt("High");
         state = "playing";
 	}
 	
 
 	void Update () {
-		
-		Score ();
+
+        //LoseHighScore.text = PlayerHighScore.ToString();
+
+        Score ();
         if (state == "lose") Lose();
 
 
-		if(PlayerScore > PlayerHighScore)
-		{
-         PlayerHighScore = PlayerScore ;
-		// PlayerPrefs.SetInt("High", PlayerHighScore);	
-		}
 	}
 
 	void Score () {
 		
 		PlayerScore = Mathf.RoundToInt(cam.transform.position.y/2f);
-		ScoreText.text = "Score :" + PlayerScore.ToString ();
-	}
+        if (PlayerScore > PlayerHighScore)
+        {
+            PlayerHighScore = PlayerScore;
+            PlayerPrefs.SetInt("High", PlayerScore);
+        }
+
+        ScoreText.text = "Score : " + PlayerScore.ToString ();
+        HighScoreText.text = "High Score : " + PlayerHighScore.ToString();
+       // if (PlayerScore > PlayerHighScore) PlayerHighScore = PlayerScore;
+
+    }
 
     /*void HighScore () {
 
@@ -42,11 +48,12 @@ public class HUD : MonoBehaviour {
 	}*/
 
     void Lose() {
-        Time.timeScale = 0f;
         LoseScore.text = ScoreText.text;
-        //LoseHighScore.text = PlayerHighScore.ToString() ;
+        LoseHighScore.text = HighScoreText.text;
         LoseCanvas.gameObject.SetActive(true);
         state = "playing";
+        Time.timeScale = 0f;
+
     }
 
 
