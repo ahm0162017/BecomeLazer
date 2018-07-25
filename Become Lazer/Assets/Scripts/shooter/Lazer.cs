@@ -42,10 +42,11 @@ public class Lazer : MonoBehaviour {
         }
     }
 
-     void OnTriggerEnter2D(Collider2D Obstacle)
+     void OnTriggerEnter2D(Collider2D Block)
     {
-        if (Obstacle.gameObject.tag == "Obstacle")
+        if (Block.gameObject.tag == "Obstacle")
         {
+
             var super = HUD.GetComponent("Abilities") as Abilities;
             if (!super.SuperLazer)
             {

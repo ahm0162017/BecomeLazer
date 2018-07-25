@@ -5,7 +5,7 @@ using UnityEngine;
 public class Abilities : MonoBehaviour {
 
     public bool SlowMotionAbility;
-    public bool sl = false, SuperLazer;
+    public bool  SuperLazer;
 
     void Start() {
 
@@ -13,9 +13,6 @@ public class Abilities : MonoBehaviour {
 
 
     void Update() {
-       // if (sl)  else Time.timeScale = 1; // controling the time scale be sl
-
-
 
     }
 
