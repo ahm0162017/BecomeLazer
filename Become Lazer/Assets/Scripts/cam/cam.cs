@@ -6,7 +6,7 @@ public class cam : MonoBehaviour {
     public float high,speed,Ywallup,Ywalldown;
 
     public GameObject shooter,wall, LimitUp, LimitDown;
-    bool once = true;
+    bool once = false;
 	// Use this for initialization
 	void Start () {
         high = transform.position.y;//high allways changes when the lazer hits the walls 
