@@ -7,7 +7,7 @@ public class LeftShooter : MonoBehaviour {
 
     float x, y,deg,rad;
     float pi = 3.14159265f;
-    public GameObject lazerR,lazerL;
+    public GameObject lazerR,lazerL, lazerLAnimationR, lazerLAnimationL;
     bool val = true;
 
     void Start () {
@@ -30,15 +30,22 @@ public class LeftShooter : MonoBehaviour {
     }
 
     public void fireL() {
-        if (gameObject.transform.position.x < 0)  Instantiate(lazerL, transform.position, transform.rotation);
-        //if (gameObject.transform.position.x > 0)  Instantiate(lazerR, transform.position, transform.rotation);
+        if (gameObject.transform.position.x < 0)
+        {
+            Instantiate(lazerL, transform.position, transform.rotation);
+            Instantiate(lazerLAnimationL, transform.position, transform.rotation);
+
+        }
     }
     public void fireR()
     {
-        //if (gameObject.transform.position.x < 0) Instantiate(lazerL, transform.position, transform.rotation);
-        if (gameObject.transform.position.x > 0) Instantiate(lazerR, transform.position, transform.rotation);
-    }
 
+        if (gameObject.transform.position.x > 0)
+        {
+            Instantiate(lazerR, transform.position, transform.rotation);
+            Instantiate(lazerLAnimationR, transform.position, transform.rotation);
+        }
+    }
 
 
     public void ChangeAngleL() {
