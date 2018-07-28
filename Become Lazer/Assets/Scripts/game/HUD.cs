@@ -36,7 +36,7 @@ public class HUD : MonoBehaviour {
             PlayerPrefs.SetInt("High", PlayerScore);
         }
 
-        ScoreText.text = "Score : " + PlayerScore.ToString ();
+        ScoreText.text =  PlayerScore.ToString ();
         HighScoreText.text = "High Score : " + PlayerHighScore.ToString();
        // if (PlayerScore > PlayerHighScore) PlayerHighScore = PlayerScore;
 

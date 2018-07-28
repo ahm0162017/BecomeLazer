@@ -194,7 +194,6 @@ Transform:
   m_Children:
   - {fileID: 1833466623}
   - {fileID: 1205654243}
-  - {fileID: 1088338634}
   - {fileID: 930037229}
   - {fileID: 1566760366}
   - {fileID: 1032529597}
@@ -608,10 +607,10 @@ RectTransform:
   m_Father: {fileID: 1420090937}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.024382025, y: 0.9193191}
-  m_AnchorMax: {x: 0.40757304, y: 0.98742026}
-  m_AnchoredPosition: {x: 0.5, y: -0.6000061}
-  m_SizeDelta: {x: -0.27999878, y: 0}
+  m_AnchorMin: {x: 0, y: 0.8625798}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388657180
 MonoBehaviour:
@@ -633,19 +632,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 687dcec43b2f746efa5a1ceaf3ba0276, type: 3}
-    m_FontSize: 35
+    m_Font: {fileID: 12800000, guid: 04a842e316b6f44bf8da702de26a8ed6, type: 3}
+    m_FontSize: 43
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 83
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score :'
+  m_Text: 250
 --- !u!222 &388657181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1037,7 +1036,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4818625738455730, guid: 353852fa11ddb5948b1606d54dabe373, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4818625738455730, guid: 353852fa11ddb5948b1606d54dabe373, type: 2}
       propertyPath: m_LocalScale.x
@@ -1592,7 +1591,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 11600604}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &930037230
 MonoBehaviour:
@@ -1606,7 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Obstacle: {fileID: 1891101739460718, guid: 353852fa11ddb5948b1606d54dabe373, type: 2}
-  TimeUntilNextObstacle: 0.5
+  TimeUntilNextObstacle: 1
   TimeSeconds: 2
 --- !u!1 &988262027
 GameObject:
@@ -1700,71 +1699,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4818625738455730, guid: 353852fa11ddb5948b1606d54dabe373,
     type: 2}
   m_PrefabInternal: {fileID: 840940401}
---- !u!1 &1088338632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1088338634}
-  - component: {fileID: 1088338633}
-  m_Layer: 0
-  m_Name: Directional light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1088338633
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088338632}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1088338634
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088338632}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -1.6872073, y: -0.24409844, z: 9.994141}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 11600604}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1129055530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 11600604}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1566760367
 SpriteRenderer:
