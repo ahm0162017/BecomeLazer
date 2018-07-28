@@ -59,8 +59,11 @@ public class cam : MonoBehaviour {
     }
 
     void WallLimits() {
-        Instantiate(LimitUp  , new Vector2(shooter.transform.position.x, high+5), transform.rotation);
-        Instantiate(LimitDown, new Vector2(shooter.transform.position.x, high-5), transform.rotation);
+        float X = shooter.transform.position.x;
+        if (shooter.transform.position.x > 0) X += 0.93f; else X -= 0.93f;
+
+        Instantiate(LimitUp  , new Vector3(X, high+5,0.2f), transform.rotation);
+        Instantiate(LimitDown, new Vector3(X, high-5,0.2f), transform.rotation);
 
     }
 }
