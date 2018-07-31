@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lazer : MonoBehaviour {
 
-    public GameObject cam, HUD, Effect1;
+    public GameObject cam, HUD, Effect1, LoseEffect;
     public float speed ;
     //public bool SuperLazer;
 
@@ -59,6 +59,8 @@ public class Lazer : MonoBehaviour {
             {
                 var myHUD = HUD.GetComponent("HUD") as HUD;
                 myHUD.state = "lose";
+                Instantiate(LoseEffect,new Vector3(transform.position.x , transform.position.y ,-5),transform.rotation);
+                speed = 0;
             }
 
         }

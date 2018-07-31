@@ -16,10 +16,11 @@ public class dt : MonoBehaviour {
          Scale = transform.localScale;
         
 
-		if (Scale.y > 0) {
-			Scale.y -= 0.1f * Time.deltaTime;
-			transform.localScale = Scale;
-		} else
-			Destroy (gameObject);
+		if (Scale.y < 40) {
+			Scale.y += 0.1f * Time.deltaTime;
+            Scale.x += 0.1f * Time.deltaTime;
+            transform.localScale = Scale;
+		} //else
+			//Destroy (gameObject);
     }
 }

@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -5
   origin: 0
+  LoseEffect: {fileID: 1776421270288452, guid: 9f5903069b86e474c93a05c01d981deb, type: 2}
 --- !u!212 &212922557025052526
 SpriteRenderer:
   m_ObjectHideFlags: 1

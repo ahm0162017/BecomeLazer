@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
 	
-	public GameObject cam;
+	public GameObject cam , Shooter , LoseEffect;
 	int PlayerScore , PlayerHighScore ;
 	public Text ScoreText,HighScoreText,LoseScore,LoseHighScore;
     public string state;

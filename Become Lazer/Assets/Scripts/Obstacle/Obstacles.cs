@@ -9,10 +9,11 @@ public class Obstacles : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Player = GameObject.FindGameObjectWithTag ("Player");
-	}
 
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 		if (gameObject.transform.position.y <= -6f) {
 			Destroy (gameObject);
@@ -21,10 +22,13 @@ public class Obstacles : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		//Debug.Log ("Collided with particles");
+        //Debug.Log ("Collided with particles");
+        //Player.GetComponent<TrailRendererTest> ().lifeTime = 0f;
+        //StartCoroutine (DestroyPlayer ());
+        if (other.gameObject.tag == "Lazer")
+        {
 
-		//Player.GetComponent<TrailRendererTest> ().lifeTime = 0f;
-		//StartCoroutine (DestroyPlayer ());
+        }
 	}
 
 	IEnumerator DestroyPlayer(){

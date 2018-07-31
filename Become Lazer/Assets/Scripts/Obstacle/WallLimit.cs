@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallLimit : MonoBehaviour {
     public float speed,origin;
      GameObject HUD;
+    public GameObject LoseEffect ;
 	// Use this for initialization
 	void Start () {
         origin = transform.position.y;
@@ -24,7 +25,7 @@ public class WallLimit : MonoBehaviour {
         {
             var myHUD = HUD.GetComponent("HUD") as HUD;
             myHUD.state = "lose";
-
+            Instantiate(LoseEffect, new Vector3(transform.position.x, transform.position.y, -5), transform.rotation);
 
         }
     }

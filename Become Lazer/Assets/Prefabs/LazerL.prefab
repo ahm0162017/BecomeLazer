@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 50976399820419018}
   m_Layer: 0
   m_Name: LazerL
-  m_TagString: Untagged
+  m_TagString: Lazer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,4 +145,5 @@ MonoBehaviour:
   cam: {fileID: 0}
   HUD: {fileID: 0}
   Effect1: {fileID: 1998981988770442, guid: f8e3d772edfeb0347a961a5436c34296, type: 2}
+  LoseEffect: {fileID: 1776421270288452, guid: 9f5903069b86e474c93a05c01d981deb, type: 2}
   speed: 30
