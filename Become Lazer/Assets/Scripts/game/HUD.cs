@@ -48,7 +48,7 @@ public class HUD : MonoBehaviour {
 	}*/
 
     void Lose() {
-        LoseScore.text = ScoreText.text;
+        LoseScore.text = "Score : "+ScoreText.text;
         LoseHighScore.text = HighScoreText.text;
         LoseCanvas.gameObject.SetActive(true);
         state = "playing";
