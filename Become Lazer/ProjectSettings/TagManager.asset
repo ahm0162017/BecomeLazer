@@ -7,6 +7,8 @@ TagManager:
   - Obstacle
   - Pointer
   - Lazer
+  - Super
+  - Slow
   layers:
   - Default
   - TransparentFX

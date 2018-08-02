@@ -13,17 +13,27 @@ public class Abilities : MonoBehaviour {
 
 
     void Update() {
+        if (SlowMotionAbility)
+        {
+            Invoke("disSlow", 7f); // after 7 seconds disable slow motion by calling disslow function 
 
+        }
+
+        if (SuperLazer)
+        {
+            Invoke("disSuper", 7f); // after 7 seconds disable slow motion by calling disslow function 
+
+        }
     }
 
     void disSlow() { SlowMotionAbility = false; } // disable slow motion 
+    void disSuper() { SuperLazer = false; } // disable super lazer
 
     public void SlowMotionOn() {
         if (SlowMotionAbility)
         {
             Time.timeScale = 0.5f;
 
-            Invoke("disSlow", 7f); // after 7 seconds disable slow motion by calling disslow function 
         }
     }
 

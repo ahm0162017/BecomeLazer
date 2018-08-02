@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour {
 
 
-	public GameObject Obstacle;
+	public GameObject Obstacle,SuperLazer,SlowMotion;
 
 	public float TimeUntilNextObstacle;
 	public float TimeSeconds;
@@ -34,13 +34,15 @@ public class ObstacleSpawner : MonoBehaviour {
 
 	void SpawnObstacle(){
 		Vector3 Pos;
-
+        int A= Random.Range(0,40);
 		Pos.x = Random.Range (-2, 2);
 		Pos.y = PositionOfSpawn.position.y;
 		Pos.z = PositionOfSpawn.position.z;
 
-
-		Instantiate (Obstacle, Pos, Quaternion.identity);
-	}
+        if(A == 0) Instantiate(SuperLazer, Pos, transform.rotation);
+        else if(A == 1) Instantiate(SlowMotion, Pos, transform.rotation);
+        else Instantiate(Obstacle, Pos, transform.rotation);
+        
+    }
 
 }

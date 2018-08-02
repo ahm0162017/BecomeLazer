@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WallLimit : MonoBehaviour {
-    public float speed,origin;
+    public float speed,originY,originX;
      GameObject HUD;
     public GameObject LoseEffect ;
 	// Use this for initialization
 	void Start () {
-        origin = transform.position.y;
+        originY = transform.position.y;
+        originX = transform.position.x;
+
         HUD = GameObject.Find("HUD");
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(new Vector2(0,speed*Time.deltaTime));
-        if (Mathf.Abs(transform.position.y - origin) > 5) Destroy(gameObject);
-	}
+        if (Mathf.Abs(transform.position.y - originY) < 5)
+            transform.Translate(new Vector2(0, speed * Time.deltaTime));
+        else
+            OUT();
+
+        if (Mathf.Abs(transform.position.x )>4) GameObject.Destroy(gameObject);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D pointer)
     {
@@ -28,5 +35,17 @@ public class WallLimit : MonoBehaviour {
             Instantiate(LoseEffect, new Vector3(transform.position.x, transform.position.y, -5), transform.rotation);
 
         }
+    }
+    void OUT() {
+        if (originX > 0)
+        {
+            transform.Translate(new Vector2(  0.3f * Time.deltaTime,0));
+        }
+
+        if (originX < 0)
+        {
+            transform.Translate(new Vector2(-0.3f * Time.deltaTime,0));
+        }
+
     }
 }

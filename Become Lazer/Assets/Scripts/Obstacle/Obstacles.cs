@@ -19,21 +19,14 @@ public class Obstacles : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
+        transform.Translate(0, -5 * Time.deltaTime, 0);
+
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-        //Debug.Log ("Collided with particles");
-        //Player.GetComponent<TrailRendererTest> ().lifeTime = 0f;
-        //StartCoroutine (DestroyPlayer ());
-        if (other.gameObject.tag == "Lazer")
-        {
 
-        }
-	}
-
-	IEnumerator DestroyPlayer(){
+	/*IEnumerator DestroyPlayer(){
 
 		yield return new WaitForSeconds (0.08f);
 		Destroy(Player);
-	}
+	}*/
 }

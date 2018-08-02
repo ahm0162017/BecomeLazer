@@ -64,6 +64,18 @@ public class Lazer : MonoBehaviour {
             }
 
         }
+
+        if (Block.gameObject.tag == "Slow")
+        {
+            var myHUD = HUD.GetComponent("Abilities") as Abilities;
+            myHUD.SlowMotionAbility = true;
+        }
+
+        if (Block.gameObject.tag == "Super")
+        {
+            var myHUD = HUD.GetComponent("Abilities") as Abilities;
+            myHUD.SuperLazer = true;
+        }
     }
 
 
