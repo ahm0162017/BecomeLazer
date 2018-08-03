@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.5
+  alpha: 0.5
+  Range: 20
 --- !u!212 &212328465724142706
 SpriteRenderer:
   m_ObjectHideFlags: 1

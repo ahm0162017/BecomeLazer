@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class Lazer : MonoBehaviour {
 
@@ -11,7 +12,6 @@ public class Lazer : MonoBehaviour {
     void Start () {
         cam = GameObject.Find("MainCamera"); // cam = MainCamera Object
         HUD = GameObject.Find("HUD");
-
     }
 
 
@@ -61,6 +61,7 @@ public class Lazer : MonoBehaviour {
                 myHUD.state = "lose";
                 Instantiate(LoseEffect,new Vector3(transform.position.x , transform.position.y ,-5),transform.rotation);
                 speed = 0;
+
             }
 
         }
@@ -69,12 +70,16 @@ public class Lazer : MonoBehaviour {
         {
             var myHUD = HUD.GetComponent("Abilities") as Abilities;
             myHUD.SlowMotionAbility = true;
+            CameraShaker.Instance.ShakeOnce(2, 4f, 0.1f, 0.1f);
+
         }
 
         if (Block.gameObject.tag == "Super")
         {
             var myHUD = HUD.GetComponent("Abilities") as Abilities;
             myHUD.SuperLazer = true;
+            CameraShaker.Instance.ShakeOnce(2, 4f, 0.1f, 0.1f);
+
         }
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using EZCameraShake;
 
 public class HUD : MonoBehaviour {
 	
@@ -48,13 +48,17 @@ public class HUD : MonoBehaviour {
 	}*/
 
     void Lose() {
+        CameraShaker.Instance.ShakeOnce(4, 4f, 0.1f, 0.1f);
         LoseScore.text = "Score : "+ScoreText.text;
         LoseHighScore.text = HighScoreText.text;
         LoseCanvas.gameObject.SetActive(true);
         state = "playing";
-        Time.timeScale = 0f;
-
+        Invoke("StopTime", 0.2f);
     }
 
+    void StopTime()
+    {
+        Time.timeScale = 0f;
+    }
 
 }
