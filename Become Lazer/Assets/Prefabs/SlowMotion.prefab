@@ -203,6 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  ObsticleDestroyEffect: {fileID: 1031699485258724, guid: 74e82d51fa343d544a0d8fc934eed2b4,
+    type: 2}
 --- !u!212 &212104951180799230
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -53,6 +53,7 @@ public class Lazer : MonoBehaviour {
     {
         if (Block.gameObject.tag == "Obstacle")
         {
+            CameraShaker.Instance.ShakeOnce(4, 4f, 0.1f, 0.1f);
 
             var super = HUD.GetComponent("Abilities") as Abilities;
             if (!super.SuperLazer)

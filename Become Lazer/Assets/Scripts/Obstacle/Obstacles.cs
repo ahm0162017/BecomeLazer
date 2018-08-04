@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour {
 
-	public GameObject Player,boom;
+	public GameObject Player,ObsticleDestroyEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +25,11 @@ public class Obstacles : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D Lazer)
     {
-        if (Lazer.gameObject.tag == "Lazer")
+        if (Lazer.gameObject.tag == "Lazer"   )
         {
-            Instantiate(boom);
             GameObject.Destroy(gameObject);
+            Instantiate(ObsticleDestroyEffect, transform.position,transform.rotation);
+
         }
     }
 

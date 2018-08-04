@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoseEffect : MonoBehaviour
 {
     Vector2 Scale;
-    public float Speed,alpha = 0.5f,Range ;
+    public float Speed,alpha = 0.5f,Range, AlphaSpeed;
 
 
     void Start()
@@ -26,8 +26,10 @@ public class LoseEffect : MonoBehaviour
             transform.localScale = Scale;
         } //else
           //Destroy (gameObject);
-        alpha -= 0.01f;
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha); // CHANGE ALPHA 
+        alpha -= AlphaSpeed;
+        //GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, alpha); // CHANGE ALPHA 
+        GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, alpha);
+
         if (alpha < 0) Destroy(this.gameObject);
     }
 }
