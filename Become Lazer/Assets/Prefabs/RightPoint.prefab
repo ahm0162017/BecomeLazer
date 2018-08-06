@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4767159932399446}
-  - component: {fileID: 135756237022424230}
   - component: {fileID: 212658066391170770}
   - component: {fileID: 114484364778405976}
   m_Layer: 0
@@ -56,19 +55,6 @@ MonoBehaviour:
   Pointer: {fileID: 0}
   PointerLength: 0.2
   PointerSpeed: -1.5
-  color: {fileID: 0}
---- !u!135 &135756237022424230
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779480843516530}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212658066391170770
 SpriteRenderer:
   m_ObjectHideFlags: 1

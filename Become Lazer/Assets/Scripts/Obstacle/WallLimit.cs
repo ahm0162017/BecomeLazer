@@ -32,7 +32,7 @@ public class WallLimit : MonoBehaviour {
         {
             var myHUD = HUD.GetComponent("HUD") as HUD;
             myHUD.state = "lose";
-            Instantiate(LoseEffect, new Vector3(transform.position.x, transform.position.y, -5), transform.rotation);
+            Instantiate(LoseEffect, new Vector3(transform.position.x,transform.position.y, -5), transform.rotation);
 
         }
     }

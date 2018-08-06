@@ -56,7 +56,7 @@ public class HUD : MonoBehaviour {
         LoseHighScore.text = HighScoreText.text;
         LoseCanvas.gameObject.SetActive(true);
         state = "playing";
-        Invoke("StopTime", 0.2f);
+        Invoke("StopTime", 0.5f);
     }
 
     void StopTime()

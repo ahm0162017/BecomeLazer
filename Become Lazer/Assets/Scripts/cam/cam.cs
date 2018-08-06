@@ -60,7 +60,7 @@ public class cam : MonoBehaviour {
 
     void WallLimits() {
         float X = shooter.transform.position.x;
-        if (shooter.transform.position.x > 0) X += 0.93f; else X -= 0.93f;
+        if (shooter.transform.position.x > 0) X += 0.93f; else X -= 1f;
 
         Instantiate(LimitUp  , new Vector3(X, high+5,0.2f), transform.rotation);
         Instantiate(LimitDown, new Vector3(X, high-5,0.2f), transform.rotation);

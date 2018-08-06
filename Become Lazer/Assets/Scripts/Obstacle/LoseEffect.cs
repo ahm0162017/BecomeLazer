@@ -21,12 +21,12 @@ public class LoseEffect : MonoBehaviour
 
         if (Scale.y < Range)
         {
-            Scale.y += Speed;//* Time.deltaTime;
-            Scale.x += Speed;//* Time.deltaTime;
+            Scale.y += Speed * Time.deltaTime;  
+            Scale.x += Speed * Time.deltaTime; 
             transform.localScale = Scale;
         } //else
           //Destroy (gameObject);
-        alpha -= AlphaSpeed;
+        alpha -= AlphaSpeed*Time.deltaTime;
         //GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, alpha); // CHANGE ALPHA 
         GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, alpha);
 
