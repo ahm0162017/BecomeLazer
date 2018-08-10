@@ -5,7 +5,7 @@ using EZCameraShake;
 
 public class Lazer : MonoBehaviour {
 
-    public GameObject cam, HUD, Effect1, LoseEffect;
+    public GameObject cam, HUD, LoseEffect;
     public float speed ;
     //public bool SuperLazer;
 
@@ -27,20 +27,18 @@ public class Lazer : MonoBehaviour {
         if ((transform.position.x > 2.82f)) //when the lazer hits the walls
         {
             GameObject.Find("Pointer").transform.position = new Vector2(2.8f, transform.position.y); ;//find the shooter and move it to the location of the collision            
+            GameObject.Destroy(gameObject);
             var CamSc = cam.GetComponent("cam") as cam;
             CamSc.high = transform.position.y;
-			Destroy (gameObject);
-            Instantiate(Effect1, new Vector3( 8.2f, transform.position.y,2),transform.rotation);
         }
 
         if ((transform.position.x < -2.82f)) //when the lazer hits the walls
         {
             //gameObject.SetActive(false);//Destroy (gameObject);
             GameObject.Find("Pointer").transform.position = new Vector2(-2.8f, transform.position.y);//find the shooter and move it to the location of the collision
+            GameObject.Destroy(gameObject);
             var CamSc = cam.GetComponent("cam") as cam;
             CamSc.high = transform.position.y;
-            Destroy(gameObject);
-            Instantiate(Effect1, new Vector3(-8.2f, transform.position.y,2), transform.rotation);
         }
     }
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 using UnityEngine.UI;
 using EZCameraShake;
@@ -16,7 +16,7 @@ public class HUD : MonoBehaviour {
 	void Start () {
         PlayerHighScore = PlayerPrefs.GetInt("High");
         state = "playing";
-        Advertisement.Initialize("2721324");
+        //Advertisement.Initialize("2721324");
     }
 	
 
@@ -62,8 +62,8 @@ public class HUD : MonoBehaviour {
     void StopTime()
     {
         Time.timeScale = 0f;
-        if(Advertisement.IsReady())
-        Advertisement.Show("rewardedVideo");
+        /*if(Advertisement.IsReady())
+        Advertisement.Show("rewardedVideo");*/
     }
 
 }
